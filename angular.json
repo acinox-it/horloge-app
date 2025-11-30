@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "first-app": {
+    "horloge-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "first-app:build:production"
+              "buildTarget": "horloge-app:build:production"
             },
             "development": {
-              "buildTarget": "first-app:build:development"
+              "buildTarget": "horloge-app:build:development"
             }
           },
           "defaultConfiguration": "development"
