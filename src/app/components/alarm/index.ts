@@ -1,0 +1,1 @@
+export { AlarmComponent } from './alarm';

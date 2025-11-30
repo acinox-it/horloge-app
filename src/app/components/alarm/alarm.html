@@ -1,0 +1,47 @@
+<div class="text-center">
+  <h2 class="text-3xl font-bold text-amber-900 mb-6">Réveil</h2>
+
+  @if (alarmService.isRinging()) {
+    <div class="mb-6 p-6 bg-amber-100 border-2 border-amber-900 rounded-lg animate-pulse">
+      <div class="text-4xl font-bold text-amber-900 mb-2">🔔 ALARME !</div>
+      <div class="text-xl text-stone-800">Il est temps de se réveiller !</div>
+    </div>
+    <button
+      (click)="alarmService.stopRinging()"
+      class="px-8 py-3 bg-stone-700 text-white rounded-lg font-semibold hover:bg-stone-800 transition-all shadow-lg"
+    >
+      Arrêter l'alarme
+    </button>
+  } @else {
+    <div class="mb-6">
+      <label class="block text-sm font-medium text-stone-700 mb-2">Heure du réveil</label>
+      <input
+        type="time"
+        [(ngModel)]="alarmService.time"
+        [disabled]="alarmService.isSet()"
+        class="px-4 py-3 text-2xl text-center border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-600 disabled:bg-stone-100 bg-white"
+      />
+    </div>
+
+    @if (alarmService.isSet()) {
+      <div class="mb-6 p-4 bg-amber-100 border-2 border-amber-700 rounded-lg">
+        <div class="text-xl text-amber-900">
+          ✅ Réveil programmé pour {{ alarmService.time() }}
+        </div>
+      </div>
+      <button
+        (click)="alarmService.cancel()"
+        class="px-8 py-3 bg-stone-700 text-white rounded-lg font-semibold hover:bg-stone-800 transition-all shadow-lg"
+      >
+        Annuler le réveil
+      </button>
+    } @else {
+      <button
+        (click)="alarmService.setAlarm()"
+        class="px-8 py-3 bg-amber-700 text-amber-50 rounded-lg font-semibold hover:bg-amber-800 transition-all shadow-lg"
+      >
+        Programmer le réveil
+      </button>
+    }
+  }
+</div>

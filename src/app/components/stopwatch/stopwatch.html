@@ -1,0 +1,31 @@
+<div class="text-center">
+  <h2 class="text-3xl font-bold text-amber-900 mb-6">Chronomètre</h2>
+
+  <div class="text-7xl font-bold text-stone-800 mb-8 font-mono">
+    {{ stopwatchService.display() }}
+  </div>
+
+  <div class="flex gap-4 justify-center">
+    @if (!stopwatchService.isRunning()) {
+      <button
+        (click)="stopwatchService.start()"
+        class="px-8 py-3 bg-amber-700 text-amber-50 rounded-lg font-semibold hover:bg-amber-800 transition-all shadow-lg"
+      >
+        ▶️ Démarrer
+      </button>
+    } @else {
+      <button
+        (click)="stopwatchService.pause()"
+        class="px-8 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition-all shadow-lg"
+      >
+        ⏸️ Pause
+      </button>
+    }
+    <button
+      (click)="stopwatchService.reset()"
+      class="px-8 py-3 bg-stone-400 text-white rounded-lg font-semibold hover:bg-stone-500 transition-all shadow-lg"
+    >
+      🔄 Réinitialiser
+    </button>
+  </div>
+</div>
