@@ -2,6 +2,10 @@
 
 Application Angular moderne avec horloge, minuteur, réveil et chronomètre.
 
+## 🌐 Démo en Ligne
+
+**[Voir la démo](https://acinox-it.github.io/horloge-app/)**
+
 ## 🎯 Fonctionnalités
 
 ### 🕐 Horloge
